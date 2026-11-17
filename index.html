@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
+<meta name="theme-color" content="#14171a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="MHXX 图鉴">
+<title>MHXX DEX · 怪物猎人 XX 随身资料库</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="img/icon/app-192.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="shell">
+
+  <!-- ============ 抽屉侧栏：全部 21 个功能 ============ -->
+  <aside class="sb" id="sb">
+    <div class="sb-top">
+      <div class="brand">
+        <div class="brand-mark">
+          <svg viewBox="0 0 44 44" aria-hidden="true">
+            <path d="M22 4c5 6 8 12 8 19a8 8 0 0 1-16 0c0-7 3-13 8-19z" fill="none" stroke="currentColor" stroke-width="1.7"/>
+            <path d="M22 12v26M14 24h16" stroke="currentColor" stroke-width="1.4" opacity=".55"/>
+          </svg>
+        </div>
+        <div class="brand-t">
+          <b>MHXX<span>DEX</span></b>
+          <small>MONSTER HUNTER DOUBLE CROSS</small>
+        </div>
+      </div>
+      <button class="sb-close" id="sb-close" type="button" aria-label="关闭目录">×</button>
+    </div>
+
+    <button class="gsearch" id="gsearch" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+      <span>搜索全部资料</span>
+      <kbd>Ctrl K</kbd>
+    </button>
+
+    <nav class="nav" id="nav" aria-label="主目录"></nav>
+
+    <div class="sb-foot">
+      <div class="sb-count" id="sb-count"></div>
+      <div class="sb-credit">
+        数据与素材来自 <b>Ping's MHXX Dex</b><br>
+        <span>pingtendo · CC BY-NC-ND 4.0 · 非商业用途</span>
+      </div>
+    </div>
+  </aside>
+  <div class="scrim" id="scrim" hidden></div>
+
+  <!-- ============ 主内容 ============ -->
+  <main class="main">
+    <header class="topbar" id="topbar"></header>
+    <div class="page" id="page">
+      <div class="loading" id="loading">
+        <div class="ld-ring"></div>
+        <span>正在载入图鉴数据…</span>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- ============ 底部导航：4 个固定入口 ============ -->
+<nav class="tabbar" id="tabbar" aria-label="主导航"></nav>
+
+<!-- ============ 全局搜索浮层 ============ -->
+<div class="omni" id="omni" hidden>
+  <div class="omni-panel">
+    <div class="omni-in">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+      <input id="omni-q" type="text" placeholder="搜索武器、防具、道具、怪物、任务、技能…" autocomplete="off" spellcheck="false">
+      <kbd>ESC</kbd>
+    </div>
+    <div class="omni-res" id="omni-res"></div>
+    <div class="omni-hint">↑↓ 选择 · Enter 跳转 · 结果按功能分组</div>
+  </div>
+</div>
+
+<div class="toast" id="toast" hidden></div>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
